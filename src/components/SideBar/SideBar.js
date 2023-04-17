@@ -21,14 +21,14 @@ const SideBar = ({ active }) => {
         <C.ProfilePhotoDiv />
         <SidebarItem Text="Home" onClick={() => navigate("/home")} />
         <SidebarItem Text="Hospital" />
-        <SidebarItem Text="Manutenção" />
+        <SidebarItem Text="Manutenção" onClick={() => navigate("/cadastros/hospitais")} />
         <SidebarItem
           Text="Alteração de credenciais"
           onClick={() => navigate("/changepassword")}
         />
       </C.Content>
       <C.Footer>
-        <Button Text={"Sair"} onClick={() => [signOut(), navigate("/")]} />
+        <Button Text={"Sair"} backgroundColor={"#046ee5"} onClick={() => [signOut(), navigate("/")]} />
       </C.Footer>
     </C.Container>
   );

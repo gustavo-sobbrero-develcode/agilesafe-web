@@ -53,7 +53,7 @@ const ChangePassword = () => {
             onChange={(e) => [setNewPassword(e.target.value), setError("")]}
           />
           <C.LabelError>{error}</C.LabelError>
-          <Button Text="Confirmar" onClick={handleChangePassword} />
+          <Button Text="Confirmar" onClick={handleChangePassword} backgroundColor={"#046ee5"} />
           {/* <C.LabelLogin>
           Já tem uma conta?
           <C.Strong>

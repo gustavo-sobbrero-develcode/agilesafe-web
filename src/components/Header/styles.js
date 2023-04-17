@@ -16,3 +16,11 @@ export const Container = styled.div`
         cursor: pointer;
     }
 `;
+
+export const Title = styled.h1`
+    align-self: center;
+    position: absolute;
+    left: 30%;
+    font-size: 21px;
+    color: #fff;
+`
