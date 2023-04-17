@@ -38,7 +38,7 @@ export const ButtonsContainer = styled.div`
 export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 35%;
+  height: 40%;
   justify-content: space-between;
   align-self: center;
   margin-left: 60px;

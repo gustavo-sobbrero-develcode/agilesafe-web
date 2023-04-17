@@ -92,8 +92,8 @@ const Maintenance = () => {
               style={{
                 marginTop: 20,
                 marginRight: 20,
-                height: 30,
-                width: 200,
+                height: 40,
+                width: 250,
               }}
             />
           </div>
