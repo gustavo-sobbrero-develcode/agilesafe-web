@@ -11,14 +11,14 @@ const Maintenance = () => {
     { value: "peugeot", text: "Peugeot" },
     { value: "bmw", text: "Bmw" },
   ];
-  const buttons = ["Incluir", "Editar", "Excluir", "Ajuda"];
+  const buttons = ["Editar", "Excluir", "Ajuda"];
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const { signOut } = useAuth();
   const navigate = useNavigate();
 
   return (
     <>
-      <Header title={"Características Hospital"} />
+      <Header title={"Especialidades"} />
       <C.Container>
         <C.TopContent>
           <C.ServiceTypeContainer>
@@ -56,7 +56,7 @@ const Maintenance = () => {
           </C.ServiceTypeContainer>
           <C.ButtonsContainer>
             <Button Text={"Adicionar"} backgroundColor={"#046ee5"} />
-            <Button Text={"Cancelar"} backgroundColor={"red"} />
+            <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
           </C.ButtonsContainer>
           <hr color="#171923"/>
         </C.TopContent>

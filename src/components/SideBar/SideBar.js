@@ -21,7 +21,7 @@ const SideBar = ({ active }) => {
         <C.ProfilePhotoDiv />
         <SidebarItem Text="Home" onClick={() => navigate("/home")} />
         <SidebarItem Text="Hospital" />
-        <SidebarItem Text="Manutenção" onClick={() => navigate("/cadastros/hospitais")} />
+        <SidebarItem Text="Especialidades" onClick={() => navigate("/cadastros/hospitais")} />
         <SidebarItem
           Text="Alteração de credenciais"
           onClick={() => navigate("/changepassword")}

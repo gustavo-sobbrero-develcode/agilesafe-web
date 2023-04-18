@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 840px;
   gap: 20px;
-  background-color: #483D8B;
+  background-color: #171923;
 `;
 
 export const Title = styled.h2``;
@@ -48,5 +48,5 @@ export const BottomContent = styled.div`
   width: 75%;
   height: 40%;
   margin-left: 300px;
-  background-color: #483D8B;
+  background-color: #171923;
 `;
