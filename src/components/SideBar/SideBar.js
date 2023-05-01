@@ -20,8 +20,8 @@ const SideBar = ({ active }) => {
       <C.Content>
         <C.ProfilePhotoDiv />
         <SidebarItem Text="Home" onClick={() => navigate("/home")} />
-        <SidebarItem Text="Hospital" />
-        <SidebarItem Text="Especialidades" onClick={() => navigate("/cadastros/hospitais")} />
+        <SidebarItem Text="Hospital" onClick={() => navigate("/institutions")}/>
+        <SidebarItem Text="Especialidades" onClick={() => navigate("/specialties")} />
         <SidebarItem
           Text="Alteração de credenciais"
           onClick={() => navigate("/changepassword")}

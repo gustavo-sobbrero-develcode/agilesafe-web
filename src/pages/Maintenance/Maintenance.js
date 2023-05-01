@@ -107,7 +107,7 @@ const Maintenance = () => {
               justifyContent: "space-around",
             }}
           >
-            <input type="checkbox" style={{}} />
+            <input type="checkbox" />
             <strong style={{ width: 350 }}>Vagas</strong>
             <strong style={{ width: 350 }}>Tipo Atendimento</strong>
           </div>
