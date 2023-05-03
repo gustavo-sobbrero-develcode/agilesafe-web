@@ -46,7 +46,7 @@ const Login = () => {
           onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
         <C.LabelError>{error}</C.LabelError>
-        <Button Text="Entrar" onClick={handleLogin} />
+        <Button Text="Entrar" onClick={handleLogin} backgroundColor={"#046ee5"} />
         {/*<C.LabelSignup>
           Não tem uma conta?
           <C.Strong>

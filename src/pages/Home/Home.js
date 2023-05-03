@@ -11,10 +11,10 @@ const Home = () => {
 
   return (
     <>
-      <Header />
+      <Header title={""} />
       <C.Container>
         <C.Title>Home Page</C.Title>
-        <Button Text="Sair" onClick={() => [signOut(), navigate("/")]} />
+        <Button Text="Sair" onClick={() => [signOut(), navigate("/")]} backgroundColor={"#046ee5"}/>
       </C.Container>
     </>
   );
