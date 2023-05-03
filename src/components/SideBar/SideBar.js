@@ -28,7 +28,7 @@ const SideBar = ({ active }) => {
         />
       </C.Content>
       <C.Footer>
-        <Button Text={"Sair"} backgroundColor={"#046ee5"} onClick={() => [signOut(), navigate("/")]} />
+        <Button Text={"Logout"} backgroundColor={"#046ee5"} onClick={() => [signOut(), navigate("/")]} />
       </C.Footer>
     </C.Container>
   );
