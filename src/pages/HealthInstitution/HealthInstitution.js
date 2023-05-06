@@ -2,8 +2,18 @@ import React from "react";
 import * as C from "./styles";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
+import axios from "axios";
 
 const HealthInstitution = () => {
+  const getInstitutions = () => {
+    const response = axios.get("https://agilesafeapi.azure-api.net/instituicao-saude", {
+      headers: {
+        "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
+      },
+    });
+
+    alert(response.data);
+  };
   return (
     <>
       <Header title={"Instituição de Saúde"} />
@@ -117,7 +127,7 @@ const HealthInstitution = () => {
         </C.InputsContainer>
         <C.ButtonsContainer>
           <div style={{ paddingRight: 20 }}>
-            <Button Text={"Salvar"} backgroundColor={"#046ee5"} />
+            <Button onClick={getInstitutions} Text={"Salvar"} backgroundColor={"#046ee5"} />
           </div>
           <div style={{ paddingRight: 1 }}>
             <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
