@@ -7,6 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   gap: 20px;
+  width: 100%;
   background-color: #171923;
 `;
 
@@ -14,17 +15,16 @@ export const Title = styled.h2``;
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 75%;
+  width: 50%;
   margin-top: 120px;
   justify-content: flex-end;
   margin-bottom: 8px;
 `;
 
 export const InputsContainer = styled.div`
-  display: flex;
   flex-direction: column;
   height: 20%;
+  width: 50%;
   justify-content: space-between;
-  align-self: center;
-  margin-left: 60px;
+  padding-left: 1%;
 `;

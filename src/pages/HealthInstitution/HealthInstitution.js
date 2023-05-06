@@ -5,14 +5,20 @@ import Header from "../../components/Header/Header";
 import axios from "axios";
 
 const HealthInstitution = () => {
-  const getInstitutions = () => {
-    const response = axios.get("https://agilesafeapi.azure-api.net/instituicao-saude", {
-      headers: {
-        "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
-      },
-    });
-
-    alert(response.data);
+  const getInstitutions = async () => {
+    try {
+      const response = await axios.get(
+        "https://agilesafeapi.azure-api.net/instituicao-saude",
+        {
+          headers: {
+            "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
+          },
+        }
+      );
+      alert(response);
+    } catch (error) {
+      alert("erro");
+    }
   };
   return (
     <>
@@ -23,7 +29,6 @@ const HealthInstitution = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              width: 500,
               marginBottom: 30,
             }}
           >
@@ -37,9 +42,7 @@ const HealthInstitution = () => {
             </label>
             <input
               style={{
-                width: "100%",
-                marginLeft: 80,
-
+                width: "500px",
                 height: "30px",
               }}
             ></input>
@@ -48,7 +51,6 @@ const HealthInstitution = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              width: 500,
               marginBottom: 30,
             }}
           >
@@ -62,15 +64,13 @@ const HealthInstitution = () => {
             </label>
             <input
               style={{
-                width: "100%",
+                width: "500px",
                 height: "30px",
-                marginLeft: 80,
               }}
             ></input>
           </div>
           <div
             style={{
-              width: 500,
               display: "flex",
               alignItems: "center",
               marginBottom: 30,
@@ -86,9 +86,8 @@ const HealthInstitution = () => {
             </label>
             <input
               style={{
-                width: "100%",
+                width: "500px",
                 height: "30px",
-                marginLeft: 80,
               }}
             ></input>
           </div>
@@ -127,7 +126,11 @@ const HealthInstitution = () => {
         </C.InputsContainer>
         <C.ButtonsContainer>
           <div style={{ paddingRight: 20 }}>
-            <Button onClick={getInstitutions} Text={"Salvar"} backgroundColor={"#046ee5"} />
+            <Button
+              onClick={getInstitutions}
+              Text={"Salvar"}
+              backgroundColor={"#046ee5"}
+            />
           </div>
           <div style={{ paddingRight: 1 }}>
             <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
