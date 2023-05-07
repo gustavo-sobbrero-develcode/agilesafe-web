@@ -1,8 +1,6 @@
 import React from "react";
 import * as C from "./styles";
 import Button from "../../components/Button/Button";
-import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import Header from "../../components/Header/Header";
 
 const Maintenance = () => {
@@ -13,8 +11,6 @@ const Maintenance = () => {
   ];
   const buttons = ["Editar", "Excluir", "Ajuda"];
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const { signOut } = useAuth();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -58,27 +54,23 @@ const Maintenance = () => {
             <Button Text={"Adicionar"} backgroundColor={"#046ee5"} />
             <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
           </C.ButtonsContainer>
-          <hr color="#171923"/>
+          <hr color="#171923" />
         </C.TopContent>
+        <hr style={{ width: "75%" }}></hr>
         <C.BottomContent>
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              marginTop: 15,
+              marginTop: 30,
             }}
           >
-            <div
-              style={{
-                marginLeft: 20,
-              }}
-            >
+            <div>
               {buttons.map((item) => (
                 <button
                   style={{
                     height: 30,
                     width: 70,
-                    marginRight: 5,
                   }}
                   type="button"
                 >
@@ -91,7 +83,6 @@ const Maintenance = () => {
               placeholder="  🔍"
               style={{
                 marginTop: 20,
-                marginRight: 20,
                 height: 40,
                 width: 250,
               }}

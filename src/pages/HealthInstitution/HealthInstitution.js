@@ -35,7 +35,7 @@ const HealthInstitution = () => {
             <label
               style={{
                 color: "#FFFFFF",
-                width: 110,
+                width: 200,
               }}
             >
               Nome
@@ -57,7 +57,7 @@ const HealthInstitution = () => {
             <label
               style={{
                 color: "#FFFFFF",
-                width: 110,
+                width: 200,
               }}
             >
               Latitude
@@ -79,7 +79,7 @@ const HealthInstitution = () => {
             <label
               style={{
                 color: "#FFFFFF",
-                width: 110,
+                width: 200,
               }}
             >
               Longitude
@@ -94,12 +94,13 @@ const HealthInstitution = () => {
           <div
             style={{ display: "flex", alignItems: "center", marginBottom: 30 }}
           >
-            <label style={{ marginRight: 124, color: "#FFFFFF" }}>Tipo</label>
+            <label style={{ color: "#FFFFFF" }}>Tipo</label>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                paddingLeft: "18%"
               }}
             >
               <input type="checkbox" style={{ marginRight: 20 }} />
