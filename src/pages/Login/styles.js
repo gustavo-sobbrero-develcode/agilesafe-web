@@ -17,7 +17,7 @@ export const Content = styled.div`
   flex-direction: column;
   width: 100%;
   box-shadow: 0 1px 2px #0003;
-  background-color: white;
+  background-color: #1A202C;
   max-width: 500px;
   padding: 20px;
   border-radius: 5px;
@@ -26,7 +26,7 @@ export const Content = styled.div`
 export const Label = styled.label`
   font-size: 18px;
   font-weight: 600;
-  color: #676767;
+  color: lightgray;
 `;
 
 export const LabelSignup = styled.label`

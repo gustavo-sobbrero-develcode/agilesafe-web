@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import * as C from "./styles";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
@@ -13,14 +13,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!user || !password) {
       setError("Preencha todos os campos");
       return;
     }
 
-    const res = logIn(user, password);
-
+    const res = await logIn(user, password);
     if (res) {
       setError(res);
       return;
@@ -46,13 +45,11 @@ const Login = () => {
           onChange={(e) => [setPassword(e.target.value), setError("")]}
         />
         <C.LabelError>{error}</C.LabelError>
-        <Button Text="Entrar" onClick={handleLogin} backgroundColor={"#046ee5"} />
-        {/*<C.LabelSignup>
-          Não tem uma conta?
-          <C.Strong>
-            <Link to="/signup">&nbsp;Registre-se</Link>
-          </C.Strong>
-        </C.LabelSignup>*/}
+        <Button
+          Text="Entrar"
+          onClick={handleLogin}
+          backgroundColor={"#046ee5"}
+        />
       </C.Content>
     </C.Container>
   );

@@ -1,46 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as C from "./styles";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
+import axios from "axios";
+import { Loader } from "../../components/Loader/Loader";
 
 const Maintenance = () => {
-  const options = [
-    { value: "audi", text: "Audi" },
-    { value: "peugeot", text: "Peugeot" },
-    { value: "bmw", text: "Bmw" },
-  ];
+  const [loading, setLoading] = useState(true);
+  const [listSpecialties, setListSpecialties] = useState([]);
   const buttons = ["Editar", "Excluir", "Ajuda"];
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  return (
+  const getSpecialties = async () => {
+    try {
+      const response = await axios.get(
+        "https://agilesafeapi.azure-api.net/especialidade",
+        {
+          headers: {
+            "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
+          },
+        }
+      );
+      setListSpecialties(response.data);
+    } catch (error) {
+      alert("Erro ao carregar os dados da instituição de saúde");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getSpecialties();
+  }, []);
+
+  return loading ? (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100%",
+        backgroundColor: "#171923",
+      }}
+    >
+      <Loader />
+    </div>
+  ) : (
     <>
       <Header title={"Especialidades"} />
       <C.Container>
         <C.TopContent>
           <C.ServiceTypeContainer>
             <C.InputsContainer>
-              <select
+              <input
                 placeholder="Tipo Atendimento"
                 style={{
                   width: "350px",
                   height: "30px",
                   marginBottom: "15px",
                 }}
-              >
-                <option value="" disabled selected>
-                  Tipo Atendimento
-                </option>
-                {options.map((item) => (
-                  <option value={item.value}>{item.text}</option>
-                ))}
-              </select>
+              />
               <input
                 placeholder="Quantidade Vagas"
                 style={{
                   width: "350px",
                   height: "30px",
                 }}
-              ></input>
+              />
             </C.InputsContainer>
             <textarea
               placeholder="Observações..."
@@ -68,6 +95,7 @@ const Maintenance = () => {
             <div>
               {buttons.map((item) => (
                 <button
+                  key={item}
                   style={{
                     height: 30,
                     width: 70,
@@ -102,59 +130,35 @@ const Maintenance = () => {
             <strong style={{ width: 350 }}>Vagas</strong>
             <strong style={{ width: 350 }}>Tipo Atendimento</strong>
           </div>
-          <div
-            style={{
-              backgroundColor: "lightgray",
-              alignItems: "center",
-              height: 50,
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <input type="checkbox" style={{}} />
-            <label style={{ width: 350 }}>60</label>
-            <label style={{ width: 350 }}>Pronto Socorro - Ambulatorial</label>
-          </div>
-          <div
-            style={{
-              backgroundColor: "lightgray",
-              alignItems: "center",
-              height: 50,
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <input type="checkbox" style={{}} />
-            <label style={{ width: 350 }}>60</label>
-            <label style={{ width: 350 }}>
-              Consultas Médicas - Ambulatorial
-            </label>
-          </div>
-          <div
-            style={{
-              height: 50,
-              backgroundColor: "lightgray",
-              alignItems: "center",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <input type="checkbox" style={{}} />
-            <label style={{ width: 350 }}>50</label>
-            <label style={{ width: 350 }}>
-              Centro Cirúrgico Cirurgias Gerais
-            </label>
-          </div>
+          {listSpecialties.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                backgroundColor: "lightgray",
+                alignItems: "center",
+                height: 50,
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <input type="checkbox" />
+              <label style={{ width: 350 }}>{item.quantidadeVagas}</label>
+              <label style={{ width: 350 }}>{item.nome}</label>
+            </div>
+          ))}
           <div
             style={{
               display: "flex",
               justifyContent: "center",
-              marginTop: 5,
+              marginTop: 12,
+              marginBottom: 20,
             }}
           >
             <button style={{ width: 30, height: 30 }}>{"<"}</button>
             {pages.map((item) => (
-              <button style={{ width: 30, height: 30 }}>{item}</button>
+              <button key={item} style={{ width: 30, height: 30 }}>
+                {item}
+              </button>
             ))}
             <button style={{ width: 30, height: 30 }}>{">"}</button>
           </div>

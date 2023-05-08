@@ -36,7 +36,7 @@ const ChangePassword = () => {
 
   return (
     <>
-      <Header />
+      <Header title={"Alteração de senha"} />
       <C.Container>
         <C.Label>Alterar senha</C.Label>
         <C.Content>
@@ -53,7 +53,11 @@ const ChangePassword = () => {
             onChange={(e) => [setNewPassword(e.target.value), setError("")]}
           />
           <C.LabelError>{error}</C.LabelError>
-          <Button Text="Confirmar" onClick={handleChangePassword} backgroundColor={"#046ee5"} />
+          <Button
+            Text="Confirmar"
+            onClick={handleChangePassword}
+            backgroundColor={"#046ee5"}
+          />
           {/* <C.LabelLogin>
           Já tem uma conta?
           <C.Strong>
