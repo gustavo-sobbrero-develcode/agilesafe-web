@@ -46,7 +46,7 @@ const HealthInstitution = () => {
         justifyContent: "center",
         height: "100vh",
         width: "100%",
-        backgroundColor: "#171923",
+        backgroundColor: "#F2F5F6",
       }}
     >
       <Loader />
@@ -65,7 +65,7 @@ const HealthInstitution = () => {
           >
             <label
               style={{
-                color: "#FFFFFF",
+                color: "black",
                 width: 200,
               }}
             >
@@ -88,7 +88,7 @@ const HealthInstitution = () => {
           >
             <label
               style={{
-                color: "#FFFFFF",
+                color: "black",
                 width: 200,
               }}
             >
@@ -111,7 +111,7 @@ const HealthInstitution = () => {
           >
             <label
               style={{
-                color: "#FFFFFF",
+                color: "black",
                 width: 200,
               }}
             >
@@ -128,7 +128,7 @@ const HealthInstitution = () => {
           <div
             style={{ display: "flex", alignItems: "center", marginBottom: 30 }}
           >
-            <label style={{ color: "#FFFFFF" }}>Tipo</label>
+            <label style={{ color: "black" }}>Tipo</label>
             <div
               style={{
                 display: "flex",
@@ -145,7 +145,7 @@ const HealthInstitution = () => {
               />
               <label
                 style={{
-                  color: "#FFFFFF",
+                  color: "black",
                 }}
               >
                 Público
@@ -158,7 +158,7 @@ const HealthInstitution = () => {
               />
               <label
                 style={{
-                  color: "#FFFFFF",
+                  color: "black",
                 }}
               >
                 Privado
@@ -168,13 +168,13 @@ const HealthInstitution = () => {
         </C.InputsContainer>
         <C.ButtonsContainer>
           <div style={{ paddingRight: 20 }}>
-            <Button Text={"Salvar"} backgroundColor={"#046ee5"} />
+            <Button Text={"Salvar"} backgroundColor={"#008080"} />
           </div>
           <div style={{ paddingRight: 1 }}>
-            <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
+            <Button Text={"Cancelar"} backgroundColor={"#008080"} />
           </div>
         </C.ButtonsContainer>
-        <hr color="#171923" />
+        <hr color="#F2F5F6" />
       </C.Container>
     </>
   );

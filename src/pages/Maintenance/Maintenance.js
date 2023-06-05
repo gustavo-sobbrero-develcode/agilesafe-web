@@ -4,6 +4,7 @@ import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import axios from "axios";
 import { Loader } from "../../components/Loader/Loader";
+import Input from "../../components/Input/Input";
 
 const Maintenance = () => {
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,7 @@ const Maintenance = () => {
         justifyContent: "center",
         height: "100vh",
         width: "100%",
-        backgroundColor: "#171923",
+        backgroundColor: "#F2F5F6",
       }}
     >
       <Loader />
@@ -53,35 +54,23 @@ const Maintenance = () => {
         <C.TopContent>
           <C.ServiceTypeContainer>
             <C.InputsContainer>
-              <input
-                placeholder="Tipo Atendimento"
-                style={{
-                  width: "350px",
-                  height: "30px",
-                  marginBottom: "15px",
-                }}
-              />
-              <input
-                placeholder="Quantidade Vagas"
-                style={{
-                  width: "350px",
-                  height: "30px",
-                }}
-              />
+              <Input placeholder={"Tipo atendimento"} />
+              <Input placeholder={"Quantidade vagas"} />
             </C.InputsContainer>
             <textarea
               placeholder="Observações..."
               style={{
                 width: "450px",
                 height: "80%",
+                border: "1px solid lightgray",
               }}
             ></textarea>
           </C.ServiceTypeContainer>
           <C.ButtonsContainer>
-            <Button Text={"Adicionar"} backgroundColor={"#046ee5"} />
-            <Button Text={"Cancelar"} backgroundColor={"#046ee5"} />
+            <Button Text={"Adicionar"} backgroundColor={"#008080"} />
+            <Button Text={"Cancelar"} backgroundColor={"#008080"} />
           </C.ButtonsContainer>
-          <hr color="#171923" />
+          <hr color="#F2F5F6" />
         </C.TopContent>
         <hr style={{ width: "75%" }}></hr>
         <C.BottomContent>
@@ -118,7 +107,7 @@ const Maintenance = () => {
           </div>
           <div
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "lightgray",
               alignItems: "center",
               height: 65,
               marginTop: 15,

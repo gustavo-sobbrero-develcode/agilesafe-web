@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 840px;
   gap: 20px;
-  background-color: #171923;
+  background-color: #F2F5F6;
 `;
 
 export const Title = styled.h2``;
@@ -37,10 +37,11 @@ export const InputsContainer = styled.div`
   height: 40%;
   justify-content: space-between;
   align-self: center;
+  gap: 15px
 `;
 
 export const BottomContent = styled.div`
   width: 75%;
   height: 40%;
-  background-color: #171923;
+  background-color: #F2F5F6;
 `;

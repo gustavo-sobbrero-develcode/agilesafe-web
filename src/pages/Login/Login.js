@@ -30,8 +30,9 @@ const Login = () => {
 
   return (
     <C.Container>
-      <C.Label>LOGIN NO AGILESAFE</C.Label>
       <C.Content>
+        <C.Label>Login</C.Label>
+        <hr style={{ width: "80%", color: "lightgray" }} />
         <Input
           type="email"
           placeholder="Digite seu usuário"
@@ -48,7 +49,7 @@ const Login = () => {
         <Button
           Text="Entrar"
           onClick={handleLogin}
-          backgroundColor={"#046ee5"}
+          backgroundColor={"#008080"}
         />
       </C.Content>
     </C.Container>

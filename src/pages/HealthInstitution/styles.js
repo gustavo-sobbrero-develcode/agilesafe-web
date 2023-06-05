@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 89.4vh;
   gap: 20px;
   width: 100%;
-  background-color: #171923;
+  background-color: #F2F5F6;
 `;
 
 export const Title = styled.h2``;

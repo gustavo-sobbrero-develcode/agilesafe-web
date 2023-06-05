@@ -22,13 +22,13 @@ export const Content = styled.div`
   max-width: 450px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #1a202c;
+  background-color: #F2F5F6
 `;
 
 export const Label = styled.label`
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 600;
-  color: lightgray;
+  color: #008080;
   margin-right: 220px;
 `;
 

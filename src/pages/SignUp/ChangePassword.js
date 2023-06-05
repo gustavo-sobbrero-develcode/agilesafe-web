@@ -56,7 +56,7 @@ const ChangePassword = () => {
           <Button
             Text="Confirmar"
             onClick={handleChangePassword}
-            backgroundColor={"#046ee5"}
+            backgroundColor={"#008080"}
           />
           {/* <C.LabelLogin>
           Já tem uma conta?

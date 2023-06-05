@@ -4,7 +4,7 @@ export const Container = styled.button`
   display: flex;
   width: 80%;
   align-items: center;
-  background-color: #1A202C; 
+  background-color: #008080; 
   font-size: 20px;
   color: white;
   padding: 10px;
@@ -12,6 +12,6 @@ export const Container = styled.button`
   border-radius: 10px;
   margin: 0 15px 20px;
   &:hover {
-    background-color: black;
+    opacity: 0.9;
   }
 `;
