@@ -35,13 +35,15 @@ const Login = () => {
         <hr style={{ width: "80%", color: "lightgray" }} />
         <Input
           type="email"
-          placeholder="Digite seu usuário"
+          label="Digite seu usuário"
+          placeholder="contato@gmail.com"
           value={user}
           onChange={(e) => [setUser(e.target.value), setError("")]}
         />
         <Input
           type="password"
-          placeholder="Digite sua senha"
+          label="Digite sua senha"
+          placeholder="123456"
           value={password}
           onChange={(e) => [setPassword(e.target.value), setError("")]}
         />

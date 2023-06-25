@@ -8,15 +8,15 @@ export const Container = styled.div`
   height: 89.4vh;
   gap: 20px;
   width: 100%;
-  background-color: #F2F5F6;
+  background-color: #f2f5f6;
 `;
 
 export const Title = styled.h2``;
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 50%;
-  margin-top: 120px;
+  width: 100%;
+  margin-top: 60px;
   justify-content: flex-end;
   margin-bottom: 8px;
 `;

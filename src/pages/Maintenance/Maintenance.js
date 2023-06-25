@@ -54,17 +54,29 @@ const Maintenance = () => {
         <C.TopContent>
           <C.ServiceTypeContainer>
             <C.InputsContainer>
-              <Input placeholder={"Tipo atendimento"} />
-              <Input placeholder={"Quantidade vagas"} />
+              <Input label="Tipo atendimento" />
+              <Input label="Quantidade vagas" />
             </C.InputsContainer>
-            <textarea
-              placeholder="Observações..."
+            <div
               style={{
-                width: "450px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
                 height: "80%",
-                border: "1px solid lightgray",
+                width: "450px",
               }}
-            ></textarea>
+            >
+              <label style={{ color: "#676767", fontSize: "13px" }}>
+                Observações
+              </label>
+              <textarea
+                style={{
+                  height: "70%",
+                  border: "1px solid lightgray",
+                  borderRadius: "7px",
+                }}
+              ></textarea>
+            </div>
           </C.ServiceTypeContainer>
           <C.ButtonsContainer>
             <Button Text={"Adicionar"} backgroundColor={"#008080"} />

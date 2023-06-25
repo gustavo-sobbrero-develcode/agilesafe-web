@@ -8,6 +8,7 @@ export const Container = styled.div`
   top: 0px;
   left: 0px;
   width: 350px;
+  border-right: 0.5px solid gray;
   left: ${props => props.sidebar ? '0' : '-100%'};
   animation: showSidebar .4s;
   > svg {
@@ -31,7 +32,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ProfilePhotoDiv = styled.div`
+export const ProfilePhotoDiv = styled.img`
   border-radius: 150px;
   height: 150px;
   width: 150px;

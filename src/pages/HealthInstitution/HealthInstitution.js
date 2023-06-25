@@ -59,7 +59,8 @@ const HealthInstitution = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
+              alignItems: "flex-start",
               marginBottom: 30,
             }}
           >
@@ -82,7 +83,8 @@ const HealthInstitution = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
+              alignItems: "flex-start",
               marginBottom: 30,
             }}
           >
@@ -105,7 +107,8 @@ const HealthInstitution = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
+              alignItems: "flex-start",
               marginBottom: 30,
             }}
           >
@@ -126,21 +129,26 @@ const HealthInstitution = () => {
             ></input>
           </div>
           <div
-            style={{ display: "flex", alignItems: "center", marginBottom: 30 }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              marginBottom: 30,
+            }}
           >
-            <label style={{ color: "black" }}>Tipo</label>
+            <label style={{ color: "black", marginBottom: 6 }}>Tipo</label>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
-                paddingLeft: "18%",
+                justifyContent: "flex-start",
+                width: "100%",
               }}
             >
               <input
                 type="radio"
                 name="tipo"
-                style={{ marginRight: 20 }}
+                style={{ marginRight: 5 }}
                 defaultChecked={tipo === "Publico"}
               />
               <label
@@ -154,7 +162,7 @@ const HealthInstitution = () => {
                 type="radio"
                 name="tipo"
                 defaultChecked={tipo === "Privado"}
-                style={{ marginRight: 20, marginLeft: 30 }}
+                style={{ marginRight: 5, marginLeft: 30 }}
               />
               <label
                 style={{
@@ -165,7 +173,6 @@ const HealthInstitution = () => {
               </label>
             </div>
           </div>
-        </C.InputsContainer>
         <C.ButtonsContainer>
           <div style={{ paddingRight: 20 }}>
             <Button Text={"Salvar"} backgroundColor={"#008080"} />
@@ -174,6 +181,7 @@ const HealthInstitution = () => {
             <Button Text={"Cancelar"} backgroundColor={"#008080"} />
           </div>
         </C.ButtonsContainer>
+        </C.InputsContainer>
         <hr color="#F2F5F6" />
       </C.Container>
     </>
