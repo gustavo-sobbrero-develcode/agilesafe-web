@@ -10,6 +10,9 @@ const Maintenance = () => {
   const [loading, setLoading] = useState(true);
   const [listSpecialties, setListSpecialties] = useState([]);
   const [search, setSearch] = useState("");
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState();
+  const [obs, setObs] = useState("");
   const buttons = ["Editar", "Excluir", "Ajuda"];
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -53,23 +56,34 @@ const Maintenance = () => {
     }
   };
 
-  /*const createSpecialtie = async () => {
+  const createSpecialtie = async () => {
     try {
       const response = await axios.post(
         "https://agilesafeapi.azure-api.net/especialidade/",
         {
-          nome: 'Psicólogo',
-          quantidadeVagas: 21,
+          nome: name,
+          quantidadeVagas: quantity,
           ativo: true,
-          observacao: 'Até às 13:00'
+          observacao: obs,
         },
+        {
+          headers: {
+            "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
+          },
+        }
       );
+      if (response) {
+        getSpecialties();
+        setName("");
+        setQuantity(0);
+        setObs("");
+      }
     } catch (error) {
       console.log(error.message);
     } finally {
       setLoading(false);
     }
-  };*/
+  };
 
   useEffect(() => {
     getSpecialties();
@@ -99,8 +113,16 @@ const Maintenance = () => {
         <C.TopContent>
           <C.ServiceTypeContainer>
             <C.InputsContainer>
-              <Input label="Tipo atendimento" />
-              <Input label="Quantidade vagas" />
+              <Input
+                label="Tipo atendimento"
+                onChange={(text) => setName(text.target.value)}
+                value={name}
+              />
+              <Input
+                label="Quantidade vagas"
+                onChange={(text) => setQuantity(text.target.value)}
+                value={quantity}
+              />
             </C.InputsContainer>
             <div
               style={{
@@ -115,6 +137,8 @@ const Maintenance = () => {
                 Observações
               </label>
               <textarea
+                onChange={(text) => setObs(text.target.value)}
+                value={obs}
                 style={{
                   height: "70%",
                   border: "1px solid lightgray",
@@ -127,7 +151,7 @@ const Maintenance = () => {
             <Button
               Text={"Adicionar"}
               backgroundColor={"#008080"}
-              /*onClick={createSpecialtie}*/
+              onClick={createSpecialtie}
             />
             <Button Text={"Cancelar"} backgroundColor={"#008080"} />
           </C.ButtonsContainer>
