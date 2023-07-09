@@ -9,6 +9,7 @@ import Input from "../../components/Input/Input";
 const Maintenance = () => {
   const [loading, setLoading] = useState(true);
   const [listSpecialties, setListSpecialties] = useState([]);
+  const [search, setSearch] = useState("");
   const buttons = ["Editar", "Excluir", "Ajuda"];
   const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -30,9 +31,53 @@ const Maintenance = () => {
     }
   };
 
+  const getSpecialtiesByName = async () => {
+    if (search) {
+      try {
+        const response = await axios.get(
+          `https://agilesafeapi.azure-api.net/especialidade/nome/?filtro=${search}`,
+          {
+            headers: {
+              "Ocp-Apim-Subscription-Key": "466808cdbee24c0187ef54e38e1969d5",
+            },
+          }
+        );
+        setListSpecialties(response.data);
+      } catch (error) {
+        alert("Erro ao carregar os dados da instituição de saúde");
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      getSpecialties();
+    }
+  };
+
+  /*const createSpecialtie = async () => {
+    try {
+      const response = await axios.post(
+        "https://agilesafeapi.azure-api.net/especialidade/",
+        {
+          nome: 'Psicólogo',
+          quantidadeVagas: 21,
+          ativo: true,
+          observacao: 'Até às 13:00'
+        },
+      );
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };*/
+
   useEffect(() => {
     getSpecialties();
   }, []);
+
+  useEffect(() => {
+    getSpecialtiesByName();
+  }, [search]);
 
   return loading ? (
     <div
@@ -79,7 +124,11 @@ const Maintenance = () => {
             </div>
           </C.ServiceTypeContainer>
           <C.ButtonsContainer>
-            <Button Text={"Adicionar"} backgroundColor={"#008080"} />
+            <Button
+              Text={"Adicionar"}
+              backgroundColor={"#008080"}
+              /*onClick={createSpecialtie}*/
+            />
             <Button Text={"Cancelar"} backgroundColor={"#008080"} />
           </C.ButtonsContainer>
           <hr color="#F2F5F6" />
@@ -108,7 +157,8 @@ const Maintenance = () => {
               ))}
             </div>
             <input
-              type="search"
+              onChange={(text) => setSearch(text.target.value)}
+              type="text"
               placeholder="  🔍"
               style={{
                 marginTop: 20,
